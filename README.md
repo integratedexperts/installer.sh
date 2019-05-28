@@ -18,3 +18,13 @@ This project provides bash installer script that handles discovering and downloa
 bash <(curl -L https://raw.githubusercontent.com/YOURORG/YOURSCAFFOLDINGREPO/BRANCH/install.sh?"$(date +%s)") "$@"
 ```
 3. Consumers will be using this URL to get the latest releases of your scaffolding files.
+
+## Features
+- Allow to override existing files (update)
+- Allow to discover values by providing callbacks (TBD). I.e., all files starting with `MyProject` will be replaced with the actual value of the file within that project.
+- Verbose output while installing
+- Has automated tests
+- Provide variables:
+  - `PACKAGE_VERSION` - filled in witht the value of the latest release by the discovery mechanism from GitHub.
+  - `PACKAGE_COMMIT_SHA` - can be specified to override release dicovery mechanism
+- Allow to provide config in scaffolding repo using `.installconfig` file
